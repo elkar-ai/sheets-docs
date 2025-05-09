@@ -13,7 +13,10 @@ Follow the steps below to get started with Elkar Platform:
    - Click on your newly created agent.
    - Go to the **API** tab.
    - Click **Generate API Key**.
-   - ⚠️ **Copy the API key now** — it won’t be shown again.
+
+<Warning>
+       **Copy the API key now** — it won’t be shown again.
+</Warning>
 
 ## Step 2: Install Elkar SDK
 
@@ -23,7 +26,7 @@ pip install elkar
 
 ## Step 3: Create your Task Handler
 
-The task handler manages a task’s status and artifacts, abstracting away the complexity of interacting with the Task Store. It supports three operations: `set_status`, `add_messages_to_history`, and `upsert_artifact`. 
+The task handler manages a task’s status and artifacts, abstracting away the complexity of interacting with the Task Store. It supports three operations: `set_status`, `add_messages_to_history`, and `upsert_artifact`.
 
 The task handler currently has a strict signature: `async def my_handler(task: TaskModifierBase, request_context: RequestContext) -> None.`While this signature is enforced for now, it may become more flexible in the future.
 

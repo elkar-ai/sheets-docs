@@ -23,7 +23,7 @@
             ]
           },
           {
-            "group": "configuration",
+            "group": "Configuration",
             "pages": [
               "configuration/taskupdate"
             ]
