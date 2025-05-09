@@ -3,8 +3,7 @@ title: "Basic Usage"
 description: "Our open-source version is available "
 ---
 
-\
-**Elkar Open Source**
+## Elkar Open Source
 
 You can use Elkar open-source version as a simple library with implemented task management and streaming in local. Checkout our [**GitHub repository**](https://mem0.dev/gd)
 
@@ -13,14 +12,13 @@ Follow the steps below to get started with Elkar Open Source:
 1. **Install Elkar Open Source**
 2. **Create an Agent and run it**
 
-
-1. **Install Elkar Open Source**
+### **1. Install Elkar Open Source**
 
 ```python
 pip install elkar
 ```
 
-2. **Create an Agent and run it\!**
+### **2. Create an Agent and run it\!**
 
 ```python
 from elkar.a2a_types import *
@@ -99,9 +97,9 @@ To run this example (e.g., if saved as `main.py` and you expose `server.app` as 
 uvicorn main:app --host 0.0.0.0 --port 5001
 ```
 
-### **Supported task updates**
+## **Supported task updates**
 
-1. **Status Update**
+### **1. Status Update**
 
 Describes the state of the task and the agent's progress. Messages in the status are appended to the task's history.
 
@@ -114,7 +112,7 @@ await task.set_status(
 )
 ```
 
-2. **Artifact Update**
+### **2. Artifact Update**
 
 Artifacts represent the result of the task. Indices are used to identify artifacts within a task. Updates append to existing artifacts if the index matches and the chunk is not the last one.
 
@@ -124,7 +122,7 @@ await task.upsert_artifact(
 )
 ```
 
-3. **Append Messages to History**
+### **3. Append Messages to History**
 
 Stores relevant information, such as thoughts or past communications, related to the task. ([<u>elkarbackup/elkarbackup-docker - GitHub</u>](https://github.com/elkarbackup/elkarbackup-docker?utm_source=chatgpt.com))
 
