@@ -4,8 +4,8 @@
   "name": "Elkar Starter Kit",
   "colors": {
     "primary": "#cbf36d",
-    "light": "#cbf36d",
-    "dark": "#3dcf8e"
+    "light": "#3dcf8e",
+    "dark": "#cbf36d"
   },
   "favicon": "/favicon.jpg",
   "navigation": {
