@@ -45,8 +45,9 @@
     }
   },
   "logo": {
-    "light": "/logo/elkar.png",
-    "dark": "/logo/elkar.png"
+    "light": "/logo/Elkar.png",
+    "dark": "/logo/Elkar.png"
+    
   },
   "navbar": {
     "links": [
