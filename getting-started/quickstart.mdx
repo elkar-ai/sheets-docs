@@ -103,10 +103,13 @@ agent_card = AgentCard(
 Instantiate your A2A Server with the Managed Service as Task Store.
 
 ```python
+api_key = "YOUR_ELKAR_API_KEY"  # Replace with your actual Elkar API key
+store = ElkarClientStore(base_url="https://api.elkar.co/api", api_key=api_key)
+
 task_manager: TaskManagerWithModifier = TaskManagerWithModifier(
     agent_card, 
-    send_task_handler=task_handler
-    # Optionally, configure a store here (e.g., for managed service or custom persistence)
+    send_task_handler=task_handler,
+    store=store
 )
 
 # Create the server instance

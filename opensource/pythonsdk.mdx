@@ -5,20 +5,21 @@ description: "Our open-source version is available "
 
 ## Elkar Open Source
 
-You can use Elkar open-source version as a simple library with implemented task management and streaming in local. Checkout our [**GitHub repository**](https://mem0.dev/gd)
+You can use Elkar open-source version as a simple library with implemented task management and streaming in local memory. Support for other task stores as PostgreSQL or Redis will come soon. Checkout our [**GitHub repository**](https://github.com/elkar-ai/elkar-a2a)
 
 Follow the steps below to get started with Elkar Open Source:
 
-1. **Install Elkar Open Source**
-2. **Create an Agent and run it**
-
-### **1. Install Elkar Open Source**
+## Step 1: Install Elkar SDK
 
 ```python
 pip install elkar
 ```
 
-### **2. Create an Agent and run it\!**
+## Step 2: Create your Task Handler
+
+The task handler manages a task’s status and artifacts, abstracting away the complexity of interacting with the Task Store. It supports three operations: `set_status`, `add_messages_to_history`, and `upsert_artifact`. 
+
+The task handler currently has a strict signature: `async def my_handler(task: TaskModifierBase, request_context: RequestContext) -> None.`While this signature is enforced for now, it may become more flexible in the future.
 
 ```python
 from elkar.a2a_types import *
@@ -26,21 +27,6 @@ from elkar.server.server import A2AServer
 from elkar.task_manager.task_manager_base import RequestContext
 from elkar.task_manager.task_manager_with_task_modifier import TaskManagerWithModifier
 from elkar.task_modifier.base import TaskModifierBase
-# For using a persistent or managed store, see the section below.
-
-agent_card = AgentCard(
-    name="Test Agent",
-    description="Test Agent Description",
-    url="https://example.com",
-    version="1.0.0",
-    skills=[],
-    capabilities=AgentCapabilities(
-        streaming=True,
-        pushNotifications=True,
-        stateTransitionHistory=True,
-    ),
-)
-
 
 async def task_handler(
     task: TaskModifierBase, request_context: RequestContext | None
@@ -75,8 +61,42 @@ async def task_handler(
         ),
         is_final=True,
     )
+```
 
+## Step 3: Create your Agent Card
 
+Your Agent Card is defined following the requirements from A2A Protocol.
+
+```python
+agent_card = AgentCard(
+    name="Test Agent",
+    description="Test Agent Description",
+    url="https://example.com",
+    provider=AgentProvider(organization="Elkar", url="https://www.elkar.co"),
+    documentationUrl="https://example.com/documentation",
+    version="1.0.0",
+    skills=[
+        AgentSkill(
+            id="1",
+            name="Generate image",
+            description="Generate images from prompt description",
+            inputModes=["text"],
+            outputModes=["image"],
+        ),
+    ],
+    capabilities=AgentCapabilities(
+        streaming=True,
+        pushNotifications=True,
+        stateTransitionHistory=True,
+    ),
+)
+```
+
+## Step 4: Create your A2A Server
+
+Instantiate your A2A Server with In Memory Task Store.
+
+```python
 task_manager: TaskManagerWithModifier = TaskManagerWithModifier(
     agent_card, 
     send_task_handler=task_handler
@@ -86,48 +106,11 @@ task_manager: TaskManagerWithModifier = TaskManagerWithModifier(
 # Create the server instance
 server = A2AServer(task_manager, host="0.0.0.0", port=5001, endpoint="/")
 
-# server.start() # This is blocking. For production, use an ASGI server like Uvicorn.
-# Example with Uvicorn (assuming your file is named main.py and server is server.app):
-# uvicorn main:server.app --host 0.0.0.0 --port 5001
+server.start() # This is blocking. For production, use an ASGI server like Uvicorn.
 ```
 
-To run this example (e.g., if saved as `main.py` and you expose `server.app` as `app`):
+To run this example (e.g., if saved as [main.py](http://main.py) and you expose [server.app](http://server.app) as app):  uvicorn main:app --host 0.0.0.0 --port 5001
 
-```python
+```bash
 uvicorn main:app --host 0.0.0.0 --port 5001
-```
-
-## **Supported task updates**
-
-### **1. Status Update**
-
-Describes the state of the task and the agent's progress. Messages in the status are appended to the task's history.
-
-```python
-await task.set_status(
-    TaskStatus(
-        state=TaskState.COMPLETED,
-        message=Message(parts=[TextPart(text="I've finished the task!")])
-    )
-)
-```
-
-### **2. Artifact Update**
-
-Artifacts represent the result of the task. Indices are used to identify artifacts within a task. Updates append to existing artifacts if the index matches and the chunk is not the last one.
-
-```python
-await task.upsert_artifact(
-    Artifact(parts=[TextPart(text="I've finished the task!")], index=0)
-)
-```
-
-### **3. Append Messages to History**
-
-Stores relevant information, such as thoughts or past communications, related to the task. ([<u>elkarbackup/elkarbackup-docker - GitHub</u>](https://github.com/elkarbackup/elkarbackup-docker?utm_source=chatgpt.com))
-
-```python
-await task.add_messages_to_history(
-    [Message(parts=[TextPart(text="I'm working on the task...")])]
-)
 ```
