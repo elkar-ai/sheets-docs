@@ -3,7 +3,9 @@
   "theme": "willow",
   "name": "Elkar Starter Kit",
   "colors": {
-    "primary": "#8aab28"
+    "primary": "#cbf36d",
+    "light": "#cbf36d",
+    "dark": "#3dcf8e"
   },
   "favicon": "/favicon.jpg",
   "navigation": {
