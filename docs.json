@@ -17,7 +17,21 @@
             "group": "Getting Started",
             "pages": [
               "index",
-           "getting-started/quickstart"
+              "getting-started/quickstart"
+            ]
+          },
+          {
+            "group": "Platform",
+            "pages": [
+              "index",
+              "platform/agent"
+            ]
+          },
+          {
+            "group": "Open Source",
+            "pages": [
+              "index",
+              "opensource/pythonsdk"
             ]
           }
         ]
@@ -47,7 +61,6 @@
   "logo": {
     "light": "/logo/Elkar.png",
     "dark": "/logo/Elkar.png"
-    
   },
   "navbar": {
     "links": [

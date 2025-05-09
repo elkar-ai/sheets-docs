@@ -1,0 +1,126 @@
+---
+title: "Basic Usage"
+---
+
+
+You can use Elkar as a simple library with implemented task management and streaming in local.
+
+1. **Install dependencies**
+
+```python
+pip install elkar
+```
+
+2. **Create an agent and run it\!**
+
+```python
+from elkar.a2a_types import *
+from elkar.server.server import A2AServer
+from elkar.task_manager.task_manager_base import RequestContext
+from elkar.task_manager.task_manager_with_task_modifier import TaskManagerWithModifier
+from elkar.task_modifier.base import TaskModifierBase
+# For using a persistent or managed store, see the section below.
+
+agent_card = AgentCard(
+    name="Test Agent",
+    description="Test Agent Description",
+    url="https://example.com",
+    version="1.0.0",
+    skills=[],
+    capabilities=AgentCapabilities(
+        streaming=True,
+        pushNotifications=True,
+        stateTransitionHistory=True,
+    ),
+)
+
+
+async def task_handler(
+    task: TaskModifierBase, request_context: RequestContext | None
+) -> None:
+
+    await task.set_status(
+        TaskStatus(
+            state=TaskState.WORKING,
+            message=Message(
+                role="agent",
+                parts=[TextPart(text="I understand the task, I'm working on it...")],
+            ),
+        )
+    )
+
+    await task.upsert_artifacts(
+        [
+            Artifact(
+                parts=[TextPart(text="I've finished the task, here is the result...")],
+                index=0,
+            )
+        ]
+    )
+
+    await task.set_status(
+        TaskStatus(
+            state=TaskState.COMPLETED,
+            message=Message(
+                role="agent",
+                parts=[TextPart(text="I've finished the task!")],
+            ),
+        ),
+        is_final=True,
+    )
+
+
+task_manager: TaskManagerWithModifier = TaskManagerWithModifier(
+    agent_card, 
+    send_task_handler=task_handler
+    # Optionally, configure a store here (e.g., for managed service or custom persistence)
+)
+
+# Create the server instance
+server = A2AServer(task_manager, host="0.0.0.0", port=5001, endpoint="/")
+
+# server.start() # This is blocking. For production, use an ASGI server like Uvicorn.
+# Example with Uvicorn (assuming your file is named main.py and server is server.app):
+# uvicorn main:server.app --host 0.0.0.0 --port 5001
+```
+
+To run this example (e.g., if saved as `main.py` and you expose `server.app` as `app`):
+
+```python
+uvicorn main:app --host 0.0.0.0 --port 5001
+```
+
+### **Supported task updates**
+
+1. **Status Update**
+
+Describes the state of the task and the agent's progress. Messages in the status are appended to the task's history.
+
+```python
+await task.set_status(
+    TaskStatus(
+        state=TaskState.COMPLETED,
+        message=Message(parts=[TextPart(text="I've finished the task!")])
+    )
+)
+```
+
+2. **Artifact Update**
+
+Artifacts represent the result of the task. Indices are used to identify artifacts within a task. Updates append to existing artifacts if the index matches and the chunk is not the last one.
+
+```python
+await task.upsert_artifact(
+    Artifact(parts=[TextPart(text="I've finished the task!")], index=0)
+)
+```
+
+3. **Append Messages to History**
+
+Stores relevant information, such as thoughts or past communications, related to the task. ([<u>elkarbackup/elkarbackup-docker - GitHub</u>](https://github.com/elkarbackup/elkarbackup-docker?utm_source=chatgpt.com))
+
+```python
+await task.add_messages_to_history(
+    [Message(parts=[TextPart(text="I'm working on the task...")])]
+)
+```
