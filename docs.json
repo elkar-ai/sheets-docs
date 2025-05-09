@@ -12,7 +12,9 @@
     "tabs": [
       {
         "tab": "Guides",
-        "groups": [
+
+
+     "groups": [
           {
             "group": "Getting Started",
             "pages": [
@@ -23,16 +25,15 @@
           {
             "group": "Platform",
             "pages": [
-              "index",
               "platform/agent"
             ]
           },
           {
             "group": "Open Source",
             "pages": [
-              "index",
               "opensource/pythonsdk"
             ]
+            
           }
         ]
       },
