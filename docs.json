@@ -1,36 +1,39 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
-  "name": "Mint Starter Kit",
+  "theme": "willow",
+  "name": "Elkar Starter Kit",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#3dcf8e",
+    "light": "#cbf36d",
+    "dark": "#3dcf8e"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.jpg",
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
-        "groups": [
+
+
+     "groups": [
           {
-            "group": "Get Started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "getting-started/quickstart"
             ]
           },
           {
-            "group": "Essentials",
+            "group": "Configuration",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
+              "configuration/taskupdate"
             ]
+          },
+          {
+            "group": "Open Source",
+            "pages": [
+              "opensource/selfhost"
+            ]
+            
           }
         ]
       },
@@ -42,15 +45,6 @@
             "pages": [
               "api-reference/introduction"
             ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
           }
         ]
       }
@@ -58,45 +52,35 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Github",
+          "href": "https://github.com/elkar-ai/elkar-a2a",
+          "icon": "github"
         }
       ]
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/Elkar.png",
+    "dark": "/logo/Elkar.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:contact@breezyai.co"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Elkar app",
+      "href": "https://app.elkar.co/login"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/elkar_ai",
+      "github": "https://github.com/elkar-ai/elkar-a2a",
+      "discord": "https://discord.gg/HDB4rkqn"
     }
   }
 }
