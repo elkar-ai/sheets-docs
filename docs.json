@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "willow",
   "name": "Elkar Starter Kit",
   "colors": {
     "primary": "#cbf36d",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "light": "#cbf36d",
+    "dark": "#cbf36d"
   },
   "favicon": "/favicon.jpg",
   "navigation": {
@@ -16,7 +16,7 @@
           {
             "group": "Getting Started",
             "pages": [
-              "getting-started/introduction",
+              "index",
            "getting-started/quickstart"
             ]
           }
