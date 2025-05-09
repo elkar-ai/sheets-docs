@@ -1,9 +1,6 @@
 ---
-title: "Basic Usage"
-description: "Our open-source version is available "
+title: "Elkar Self-Hosting"
 ---
-
-## Elkar Open Source
 
 You can use Elkar open-source version as a simple library with implemented task management and streaming in local memory. Support for other task stores as PostgreSQL or Redis will come soon. Checkout our [**GitHub repository**](https://github.com/elkar-ai/elkar-a2a)
 
@@ -17,7 +14,7 @@ pip install elkar
 
 ## Step 2: Create your Task Handler
 
-The task handler manages a task’s status and artifacts, abstracting away the complexity of interacting with the Task Store. It supports three operations: `set_status`, `add_messages_to_history`, and `upsert_artifact`. 
+The task handler manages a task’s status and artifacts, abstracting away the complexity of interacting with the Task Store. It supports three operations: `set_status`, `add_messages_to_history`, and `upsert_artifact`.
 
 The task handler currently has a strict signature: `async def my_handler(task: TaskModifierBase, request_context: RequestContext) -> None.`While this signature is enforced for now, it may become more flexible in the future.
 
