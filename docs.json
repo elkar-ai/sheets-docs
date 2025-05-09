@@ -4,8 +4,8 @@
   "name": "Elkar Starter Kit",
   "colors": {
     "primary": "#cbf36d",
-    "light": "#cbf36d",
-    "dark": "#8aab28"
+    "light": "#8aab28",
+    "dark": "#cbf36d"
   },
   "favicon": "/favicon.jpg",
   "navigation": {
@@ -23,15 +23,15 @@
             ]
           },
           {
-            "group": "Platform",
+            "group": "configuration",
             "pages": [
-              "platform/taskupdate"
+              "configuration/taskupdate"
             ]
           },
           {
             "group": "Open Source",
             "pages": [
-              "opensource/pythonsdk"
+              "opensource/selfhost"
             ]
             
           }
