@@ -36,17 +36,6 @@
             
           }
         ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          }
-        ]
       }
     ],
     "global": {
