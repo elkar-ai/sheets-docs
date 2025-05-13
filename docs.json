@@ -25,7 +25,8 @@
           {
             "group": "Configuration",
             "pages": [
-              "configuration/taskupdate"
+              "configuration/taskupdate",
+               "configuration/debugger"
             ]
           },
           {
