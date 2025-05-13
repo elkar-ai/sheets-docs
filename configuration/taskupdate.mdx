@@ -1,14 +1,34 @@
 ---
 title: "Task updates"
-description: "List of supported task udpates"
+description: "List of supported task modifier udpates"
 ---
 
-1. **Status Update**
+To simplify task management, Elkar provides a `TaskModifier` class with five core methods. These methods handle interactions with the store and queue, allowing you to focus on task logic directly.
+
+1. **Get Task**
+
+Retrieves a task, either from the store or via the method.
+
+```python
+await task_modifier.get_task(
+	from_store=False # Set to True to fetch from the store 
+)
+```
+
+2. **Get Task Send Params**
+
+Fetches the parameters needed to send a task.
+
+```python
+await task_modifier.get_task_send_params()
+```
+
+3. **Status Update**
 
 Describes the state of the task and the agent's progress. Messages in the status are appended to the task's history.
 
 ```python
-await task.set_status(
+await task_modifier.set_status(
     TaskStatus(
         state=TaskState.COMPLETED,
         message=Message(parts=[TextPart(text="I've finished the task!")])
@@ -16,22 +36,22 @@ await task.set_status(
 )
 ```
 
-2. **Artifact Update**
+4. **Artifact Update**
 
 Artifacts represent the result of the task. Indices are used to identify artifacts within a task. Updates append to existing artifacts if the index matches and the chunk is not the last one.
 
 ```python
-await task.upsert_artifact(
+await task_modifier.upsert_artifact(
     Artifact(parts=[TextPart(text="I've finished the task!")], index=0)
 )
 ```
 
-3. **Append Messages to History**
+5. **Append Messages to History**
 
-Stores relevant information, such as thoughts or past communications, related to the task. ([<u>elkarbackup/elkarbackup-docker - GitHub</u>](https://github.com/elkarbackup/elkarbackup-docker?utm_source=chatgpt.com))
+Stores relevant information, such as thoughts or past communications, related to the task.
 
 ```python
-await task.add_messages_to_history(
+await task_modifier.add_messages_to_history(
     [Message(parts=[TextPart(text="I'm working on the task...")])]
 )
 ```
