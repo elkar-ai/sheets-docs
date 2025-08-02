@@ -27,8 +27,10 @@
              {
             "group": "Features",
             "pages": [
-              "features/core-features",
-              "features/other-features"
+              "features/error",
+              "features/tracing",
+               "features/pdf",
+               "features/agent"
             ]
           },
     {
@@ -77,9 +79,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/elkar_ai",
-      "github": "https://github.com/elkar-ai/elkar-a2a",
-      "discord": "https://discord.gg/HDB4rkqn"
+      "x": "https://x.com/Sarah_Sellier",
+      "linkedin": "https://www.linkedin.com/company/elkar-ai/?viewAsMember=true",
+      "discord": "https://discord.gg/k89v3cF6fX"
     }
   }
 }
