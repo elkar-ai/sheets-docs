@@ -1,10 +1,117 @@
 ---
-title: "New file"
-description: "Description of your new file."
+title: "Writing Effective Prompts"
+description: "Master prompting for complex financial modeling. The right prompt structure helps you build sophisticated DCF models, forecasts, and analyses faster."
 ---
 
-**Be more specific with your prompts:** •
+## The Finance Prompting Framework
 
-- Instead of "analyze this" → "What are the sales trends by month?"
-- Include column names → "Calculate commission on column C sales data"
-- Specify desired output → "Create a bar chart showing revenue by region"
+**Specific financial context** gets you better models. Elkar understands finance - use the right terminology and be precise about your assumptions.
+
+<CardGroup cols={2}>
+  <Card title="Structure First" icon="clipboard-list-check">
+    **Define the model framework** before diving into calculations
+  </Card>
+  <Card title="Layer Complexity" icon="layer-group">
+    **Build step-by-step** rather than asking for everything at once
+  </Card>
+  <Card title="State Assumptions" icon="network-wired">
+    **Be explicit** about your financial assumptions and methodology
+  </Card>
+  <Card title="Format Intentionally" icon="sparkles">
+    **Be precise** about layout, colors, and structure to guide the AI toward a professional result
+  </Card>
+</CardGroup>
+
+## Good vs. Bad Financial Prompts
+
+<Tabs>
+  <Tab title="DCF Models">
+    ❌ **Vague:** _"Build a DCF model"_
+
+    ✅ **Specific:** _"Build a 5-year DCF model for a SaaS company with current revenue of \$50M, 25% growth rate declining to 15%, and 20% EBITDA margins expanding to 30%"_
+
+    **Why it works:** Timeframe, company type, key assumptions, growth trajectory
+  </Tab>
+  <Tab title="Forecasting">
+    ❌ **Generic:** _"Create a revenue forecast"_
+
+    ✅ **Detailed:** _"Build bottom-up revenue forecast: 1,000 customers growing 15% annually, average price \$5,000 increasing 3% yearly, churn rate 8%"_
+
+    **Why it works:** Unit economics, growth drivers, specific metrics
+  </Tab>
+  <Tab title="Valuation">
+    ❌ **Unclear:** _"Value this company"_
+
+    ✅ **Precise:** _"Create comparable company analysis with EV/Revenue, EV/EBITDA, P/E multiples for software companies with 100M revenue"_
+
+    **Why it works:** Methodology, metrics, peer group definition
+  </Tab>
+  <Tab title="LBO">
+    ❌ **Too broad:** _"Create an LBO model"_
+
+    ✅ **Comprehensive:** _"Build LBO model: \$100M purchase price, 60% debt at 7% interest, 5-year hold period, exit at 10x EBITDA, target 25% IRR"_
+
+    **Why it works:** Purchase price, leverage ratio, debt terms, hold period, exit assumptions, return targets
+  </Tab>
+  <Tab title="M&A">
+    ❌ **Ambiguous:** _"Analyze this merger"_
+
+    ✅ **Structured:** _"Create accretion/dilution analysis: acquirer at 20x P/E, target at 15x P/E, 30% cash/70% stock deal, \$50M synergies over 3 years"_
+
+    **Why it works:** Deal structure, valuation multiples, consideration mix, synergy assumptions, timeline
+  </Tab>
+</Tabs>
+
+### Use Financial Terminology
+
+<CardGroup cols={2}>
+  <Card title="Margins & Growth" icon="arrow-up-right-dots">
+    ✅ _"EBITDA margins expanding 200bps annually"_
+
+    ✅ _"Net working capital as % of revenue"_
+  </Card>
+  <Card title="Valuation & Returns" icon="dollar-sign">
+    ✅ _"Terminal value using exit multiple of 12x EBITDA"_
+
+    ✅ _"WACC of 10% with 30% debt/equity ratio"_
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Pro tip:** Start simple with core assumptions, then layer in complexity. Each prompt should build on the previous structure.
+</Tip>
+
+## Live Demo: Building a DCF
+
+<Frame>
+  ![DCF model building demo](/images/dcf-demo.gif)
+</Frame>
+
+<AccordionGroup>
+  <Accordion title="Get Advanced DCF Prompt">
+    Build a full, professional-grade DCF model for a SaaS company with monthly forecasts over 2 years. Include detailed assumptions (subscription revenue by cohort, churn, CAC, headcount ramp, salaries, margins, taxes, capex, working capital). Structure the model across cleanly separated sheets: Inputs, Monthly Forecast, Free Cash Flow, Valuation (with both perpetuity and exit multiple), Sensitivity Analysis, and a Summary Dashboard with charts (FCF, valuation waterfall, CAC payback). Format using standard financial modeling best practices: clean layout, blue input cells, consistent formatting, borders, and named ranges. Include transparent formulas, dynamic links to Inputs, and annotate key calculations for clarity like in investment banking models
+  </Accordion>
+</AccordionGroup>
+
+## Quick Reference
+
+<AccordionGroup>
+  <Accordion title="Essential Financial Terms">
+    - **EBITDA** - Earnings before interest, taxes, depreciation, amortization
+    - **WACC** - Weighted average cost of capital
+    - **FCF** - Free cash flow (operating cash flow minus capex)
+    - **LTV/CAC** - Lifetime value to customer acquisition cost ratio
+    - **ARR** - Annual recurring revenue
+  </Accordion>
+  <Accordion title="Model Structure Best Practices">
+    - **Blue cells** for inputs and assumptions
+    - **Black cells** for calculations
+    - **Separate sheets** for inputs, calculations, outputs
+    - **Named ranges** for key variables
+    - **Consistent formatting** throughout
+  </Accordion>
+</AccordionGroup>
+
+## **Ready to try?** Let's share it together\!
+
+Start with a simple DCF prompt above, then join our [Discord community](https://discord.gg/k89v3cF6fX) to learn advanced prompts techniques from finance professionals.
