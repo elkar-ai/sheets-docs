@@ -19,7 +19,8 @@
             "group": "Getting Started",
             "pages": [
               "index",
-               "getting-started/installation",
+               "getting-started/installation-excel",
+               "getting-started/installation-google",
                 "getting-started/quickstart"
             ]
           },
@@ -42,9 +43,7 @@
             "group": "Help",
             "pages": [
            "help/faq",
-        "help/troubleshooting",
-        "help/data-security",
-          "help/contact"
+        "help/data-security"
             ]
             
           }
