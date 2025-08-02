@@ -11,7 +11,7 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Elkar",
 
 
      "groups": [
@@ -27,16 +27,14 @@
              {
             "group": "Features",
             "pages": [
-              "index",
               "features/core-features",
               "features/other-features"
             ]
           },
     {
-            "group": "How-To Guides",
+            "group": "How-to",
             "pages": [
-              "index",
-              "guides/prompts"
+              "how-to/prompts"
             ]
           },
           {
