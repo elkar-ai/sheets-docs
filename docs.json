@@ -19,20 +19,32 @@
             "group": "Getting Started",
             "pages": [
               "index",
-              "getting-started/quickstart"
+               "getting-started/installation",
+                "getting-started/quickstart"
+            ]
+          },
+             {
+            "group": "Features",
+            "pages": [
+              "index",
+              "features/core-features",
+              "features/other-features"
+            ]
+          },
+    {
+            "group": "How-To Guides",
+            "pages": [
+              "index",
+              "guides/prompts"
             ]
           },
           {
-            "group": "Configuration",
+            "group": "Help",
             "pages": [
-              "configuration/taskupdate",
-               "configuration/debugger"
-            ]
-          },
-          {
-            "group": "Open Source",
-            "pages": [
-              "opensource/selfhost"
+           "help/faq",
+        "help/troubleshooting",
+        "help/data-security",
+          "help/contact"
             ]
             
           }
