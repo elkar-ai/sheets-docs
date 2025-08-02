@@ -40,9 +40,9 @@
             ]
           },
           {
-            "group": "Help",
+            "group": "help",
             "pages": [
-           "help/faq",
+           "help/FAQ",
         "help/data-security"
             ]
             
