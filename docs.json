@@ -12,27 +12,25 @@
     "tabs": [
       {
         "tab": "Elkar",
-
-
-     "groups": [
+        "groups": [
           {
             "group": "Getting Started",
             "pages": [
               "index",
-               "getting-started/installation-excel",
-               "getting-started/installation-google",
-                "getting-started/quickstart"
+              "getting-started/installation-excel",
+              "getting-started/installation-google",
+              "getting-started/quickstart"
             ]
           },
-             {
+          {
             "group": "Features",
             "pages": [
               "features/error",
               "features/tracing",
-               "features/pdf"
+              "features/pdf"
             ]
           },
-    {
+          {
             "group": "How-to",
             "pages": [
               "how-to/prompts"
@@ -41,30 +39,28 @@
           {
             "group": "help",
             "pages": [
-           "help/FAQ",
-        "help/data-security"
+              "help/FAQ",
+              "help/data-security"
             ]
-            
           }
         ]
       }
     ],
-    {
-  "global": {
-    "anchors": [
-      {
-        "anchor": "Website",
-        "href": "https://elkar.co/",
-        "icon": "globe"
-      },
-      {
-        "anchor": "Discord",
-        "href": "https://discord.gg/k89v3cF6fX",
-        "icon": "discord"
-      }
-    ]
-  }
-},
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Website",
+          "href": "https://elkar.co/",
+          "icon": "globe"
+        },
+        {
+          "anchor": "Discord",
+          "href": "https://discord.gg/k89v3cF6fX",
+          "icon": "discord"
+        }
+      ]
+    }
+  },
   "logo": {
     "light": "/logo/logo3.png",
     "dark": "/logo/logo3.png"
