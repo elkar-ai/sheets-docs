@@ -61,20 +61,20 @@
     }
   },
   "logo": {
-    "light": "/logo/Elkar.png",
-    "dark": "/logo/Elkar.png"
+    "light": "/logo/logo.png",
+    "dark": "/logo/logo.png"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:contact@breezyai.co"
+        "href": "mailto:contact@elkar.co"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Elkar app",
-      "href": "https://app.elkar.co/login"
+      "label": "Elkar dashboard",
+      "href": "https://sheets-app.elkar.co/"
     }
   },
   "footer": {
