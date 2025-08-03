@@ -31,13 +31,13 @@
             ]
           },
           {
-            "group": "How-to",
+            "group": "How to",
             "pages": [
               "how-to/prompts"
             ]
           },
           {
-            "group": "help",
+            "group": "Help",
             "pages": [
               "help/FAQ",
               "help/data-security"
