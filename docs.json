@@ -29,8 +29,7 @@
             "pages": [
               "features/error",
               "features/tracing",
-               "features/pdf",
-               "features/agent"
+               "features/pdf"
             ]
           },
     {
@@ -50,16 +49,22 @@
         ]
       }
     ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Github",
-          "href": "https://github.com/elkar-ai/elkar-a2a",
-          "icon": "github"
-        }
-      ]
-    }
-  },
+    {
+  "global": {
+    "anchors": [
+      {
+        "anchor": "Website",
+        "href": "https://elkar.co/",
+        "icon": "globe"
+      },
+      {
+        "anchor": "Discord",
+        "href": "https://discord.gg/k89v3cF6fX",
+        "icon": "discord"
+      }
+    ]
+  }
+},
   "logo": {
     "light": "/logo/logo3.png",
     "dark": "/logo/logo3.png"
