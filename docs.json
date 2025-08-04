@@ -17,9 +17,10 @@
             "group": "Getting Started",
             "pages": [
               "index",
+              "getting-started/quickstart",
               "getting-started/installation-excel",
-              "getting-started/installation-google",
-              "getting-started/quickstart"
+              "getting-started/installation-google"
+           
             ]
           },
           {
