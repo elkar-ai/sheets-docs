@@ -33,6 +33,7 @@
           {
             "group": "How to",
             "pages": [
+             "how-to/use-case",
               "how-to/prompts"
             ]
           },
