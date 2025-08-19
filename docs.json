@@ -26,10 +26,12 @@
           {
             "group": "Features",
             "pages": [
+               "features/rules",
               "features/error",
               "features/tracing",
               "features/pdf",
                "features/web"
+               
             ]
           },
           {
